@@ -7,15 +7,15 @@ import NewsCard from "@/components/NewsCard";
 import heroPigeons from "@/assets/hero-pigeons.jpg";
 
 const newsItems = [
-  { title: "Season 2026 Calendar Released", excerpt: "The board has finalized the complete flight schedule including 12 Vitesse, 8 Midfond, and 4 Dagfond races.", date: "Mar 10, 2026", category: "Schedule" },
-  { title: "New Electronic Timing System", excerpt: "PRPA upgrades to Benzing M1 clocking system for all members starting this season.", date: "Mar 5, 2026", category: "Technology" },
-  { title: "Champions Gala Recap", excerpt: "Over 200 members celebrated at the annual awards night. Full results and photo gallery now available.", date: "Feb 28, 2026", category: "Events" },
+  { title: "Seizoen 2026 kalender vrijgegeven", excerpt: "Het bestuur heeft het volledige vluchtprogramma goedgekeurd met 12 Vitesse, 8 Midfond en 4 Dagfond vluchten.", date: "10 mrt 2026", category: "Programma" },
+  { title: "Nieuw elektronisch kloksysteem", excerpt: "PRPA stapt over op het Benzing M1 kloksysteem voor alle leden vanaf dit seizoen.", date: "5 mrt 2026", category: "Technologie" },
+  { title: "Kampioenenfeest terugblik", excerpt: "Meer dan 200 leden vierden het jaarlijkse prijzengala. Volledige resultaten en fotogalerij nu beschikbaar.", date: "28 feb 2026", category: "Evenementen" },
 ];
 
 const stats = [
-  { icon: Trophy, label: "Active Members", value: "342" },
-  { icon: Timer, label: "Avg. Velocity", value: "1,142 m/min" },
-  { icon: MapPin, label: "Races This Season", value: "24" },
+  { icon: Trophy, label: "Actieve leden", value: "342" },
+  { icon: Timer, label: "Gem. snelheid", value: "1.142 m/min" },
+  { icon: MapPin, label: "Vluchten dit seizoen", value: "24" },
 ];
 
 const Index = () => (
@@ -23,7 +23,7 @@ const Index = () => (
     {/* Hero */}
     <section className="relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroPigeons} alt="Racing pigeons in flight against a clear sky" className="w-full h-full object-cover" />
+        <img src={heroPigeons} alt="Wedstrijdduiven in volle vlucht" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/30" />
       </div>
       <div className="container relative z-10 py-24 md:py-36">
@@ -34,7 +34,7 @@ const Index = () => (
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="font-display text-5xl md:text-7xl font-extrabold tracking-tighter text-primary-foreground"
           >
-            Velocity Meets Heritage
+            Snelheid ontmoet traditie
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ const Index = () => (
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="mt-4 text-lg md:text-xl text-primary-foreground/80 max-w-lg"
           >
-            Real-time results and seasonal tracking for the modern racing loft.
+            Realtime uitslagen en seizoenstracking voor het moderne duivenhok.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -52,11 +52,11 @@ const Index = () => (
           >
             <Button asChild size="lg" className="press-effect bg-primary hover:bg-primary/90 text-primary-foreground">
               <Link to="/results">
-                View Latest Results <ArrowRight className="ml-2 w-4 h-4" />
+                Bekijk uitslagen <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="press-effect border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent">
-              <Link to="/schedule">Flight Schedule</Link>
+              <Link to="/schedule">Vluchtprogramma</Link>
             </Button>
           </motion.div>
         </div>
@@ -97,8 +97,8 @@ const Index = () => (
         {/* News */}
         <div className="lg:col-span-8">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="font-display text-2xl font-bold text-foreground">Latest News</h2>
-            <Link to="/club" className="text-sm text-accent hover:underline">View all →</Link>
+            <h2 className="font-display text-2xl font-bold text-foreground">Laatste nieuws</h2>
+            <Link to="/club" className="text-sm text-accent hover:underline">Alles bekijken →</Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {newsItems.map((n, i) => (

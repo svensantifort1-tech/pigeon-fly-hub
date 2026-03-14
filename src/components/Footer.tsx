@@ -8,7 +8,6 @@ const sponsors = [
 
 const Footer = () => (
   <footer className="border-t bg-card">
-    {/* Sponsor marquee */}
     <div className="border-b overflow-hidden py-4">
       <div className="flex animate-marquee whitespace-nowrap">
         {sponsors.map((s, i) => (
@@ -29,15 +28,20 @@ const Footer = () => (
             </span>
           </div>
           <p className="text-sm text-muted-foreground max-w-md">
-            Velocity meets heritage. Real-time results and seasonal tracking for the modern racing loft.
+            Snelheid ontmoet traditie. Realtime uitslagen en seizoenstracking voor het moderne duivenhok.
           </p>
         </div>
         <div>
-          <h4 className="font-display text-sm font-bold text-foreground mb-3">Navigation</h4>
+          <h4 className="font-display text-sm font-bold text-foreground mb-3">Navigatie</h4>
           <div className="flex flex-col gap-2">
-            {["Results", "Schedule", "Club", "Contact"].map((l) => (
-              <Link key={l} to={`/${l.toLowerCase()}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                {l}
+            {[
+              { label: "Uitslagen", to: "/results" },
+              { label: "Programma", to: "/schedule" },
+              { label: "Club", to: "/club" },
+              { label: "Contact", to: "/contact" },
+            ].map((l) => (
+              <Link key={l.to} to={l.to} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                {l.label}
               </Link>
             ))}
           </div>
@@ -49,7 +53,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t mt-8 pt-6">
-        <p className="text-xs text-muted-foreground">© 2026 PRPA. All rights reserved.</p>
+        <p className="text-xs text-muted-foreground">© 2026 PRPA. Alle rechten voorbehouden.</p>
       </div>
     </div>
   </footer>

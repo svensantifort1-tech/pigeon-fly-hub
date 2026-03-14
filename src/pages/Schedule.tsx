@@ -11,16 +11,16 @@ interface Flight {
 }
 
 const flights: Flight[] = [
-  { date: "Mar 22", location: "Noyon", category: "Vitesse", distance: "210 km", basketing: "Mar 21 19:00", status: "completed" },
-  { date: "Apr 5", location: "Orléans", category: "Vitesse", distance: "320 km", basketing: "Apr 4 19:00", status: "completed" },
-  { date: "Apr 19", location: "Bourges", category: "Vitesse", distance: "385 km", basketing: "Apr 18 18:00", status: "completed" },
-  { date: "May 3", location: "Tours", category: "Midfond", distance: "420 km", basketing: "May 2 18:00", status: "completed" },
-  { date: "May 17", location: "Poitiers", category: "Midfond", distance: "480 km", basketing: "May 16 17:00", status: "completed" },
-  { date: "Jun 1", location: "Angoulême", category: "Midfond", distance: "520 km", basketing: "May 31 17:00", status: "live" },
-  { date: "Jun 15", location: "Châteauroux", category: "Midfond", distance: "542 km", basketing: "Jun 14 19:00", status: "upcoming" },
-  { date: "Jun 29", location: "Limoges", category: "Dagfond", distance: "612 km", basketing: "Jun 28 16:00", status: "upcoming" },
-  { date: "Jul 13", location: "Brive", category: "Dagfond", distance: "680 km", basketing: "Jul 12 15:00", status: "upcoming" },
-  { date: "Jul 27", location: "Cahors", category: "Dagfond", distance: "745 km", basketing: "Jul 26 14:00", status: "upcoming" },
+  { date: "22 mrt", location: "Noyon", category: "Vitesse", distance: "210 km", basketing: "21 mrt 19:00", status: "completed" },
+  { date: "5 apr", location: "Orléans", category: "Vitesse", distance: "320 km", basketing: "4 apr 19:00", status: "completed" },
+  { date: "19 apr", location: "Bourges", category: "Vitesse", distance: "385 km", basketing: "18 apr 18:00", status: "completed" },
+  { date: "3 mei", location: "Tours", category: "Midfond", distance: "420 km", basketing: "2 mei 18:00", status: "completed" },
+  { date: "17 mei", location: "Poitiers", category: "Midfond", distance: "480 km", basketing: "16 mei 17:00", status: "completed" },
+  { date: "1 jun", location: "Angoulême", category: "Midfond", distance: "520 km", basketing: "31 mei 17:00", status: "live" },
+  { date: "15 jun", location: "Châteauroux", category: "Midfond", distance: "542 km", basketing: "14 jun 19:00", status: "upcoming" },
+  { date: "29 jun", location: "Limoges", category: "Dagfond", distance: "612 km", basketing: "28 jun 16:00", status: "upcoming" },
+  { date: "13 jul", location: "Brive", category: "Dagfond", distance: "680 km", basketing: "12 jul 15:00", status: "upcoming" },
+  { date: "27 jul", location: "Cahors", category: "Dagfond", distance: "745 km", basketing: "26 jul 14:00", status: "upcoming" },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -30,9 +30,9 @@ const categoryColors: Record<string, string> = {
 };
 
 const statusLabel: Record<string, string> = {
-  completed: "Completed",
-  live: "In Progress",
-  upcoming: "Upcoming",
+  completed: "Voltooid",
+  live: "Bezig",
+  upcoming: "Gepland",
 };
 
 const statusColor: Record<string, string> = {
@@ -45,9 +45,9 @@ const Schedule = () => (
   <div className="min-h-screen">
     <section className="container py-12">
       <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground">
-        Flight Schedule
+        Vluchtprogramma
       </h1>
-      <p className="mt-2 text-muted-foreground">Season 2026 — Complete race calendar</p>
+      <p className="mt-2 text-muted-foreground">Seizoen 2026 — Volledige vluchtkalender</p>
 
       <div className="mt-8 grid gap-3">
         {flights.map((f, i) => (
@@ -58,12 +58,9 @@ const Schedule = () => (
             transition={{ duration: 0.4, delay: i * 0.05, ease: [0.16, 1, 0.3, 1] }}
             className={`shield-container p-5 flex flex-col md:flex-row md:items-center gap-4 ${f.status === "live" ? "ring-2 ring-primary" : ""}`}
           >
-            {/* Date */}
             <div className="w-20 shrink-0">
               <p className="font-display text-sm font-bold text-foreground">{f.date}</p>
             </div>
-
-            {/* Location & Category */}
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-muted-foreground shrink-0" />
@@ -73,17 +70,13 @@ const Schedule = () => (
                 </span>
               </div>
             </div>
-
-            {/* Details */}
             <div className="flex items-center gap-6 text-sm text-muted-foreground">
               <span className="font-mono-data">{f.distance}</span>
               <span className="hidden md:inline">
                 <CalIcon className="w-3 h-3 inline mr-1" />
-                Basket: {f.basketing}
+                Inkorven: {f.basketing}
               </span>
             </div>
-
-            {/* Status */}
             <span className={`text-xs font-bold px-3 py-1 rounded-full shrink-0 ${statusColor[f.status]}`}>
               {statusLabel[f.status]}
             </span>
