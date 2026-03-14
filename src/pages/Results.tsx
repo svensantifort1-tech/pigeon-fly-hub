@@ -29,7 +29,7 @@ const mockResults: RaceResult[] = [
 ];
 
 const races = [
-  { value: "all", label: "All Races" },
+  { value: "all", label: "Alle vluchten" },
   { value: "chateauroux", label: "Châteauroux - Midfond" },
   { value: "bourges", label: "Bourges - Vitesse" },
   { value: "limoges", label: "Limoges - Dagfond" },
@@ -78,16 +78,16 @@ const Results = () => {
     <div className="min-h-screen">
       <section className="container py-12">
         <h1 className="font-display text-4xl md:text-5xl font-extrabold tracking-tighter text-foreground">
-          Race Results
+          Uitslagen
         </h1>
-        <p className="mt-2 text-muted-foreground">Season performance data and rankings.</p>
+        <p className="mt-2 text-muted-foreground">Seizoensresultaten en klassementen.</p>
 
         {/* Filters */}
         <div className="mt-8 flex flex-col md:flex-row gap-4">
           <div className="relative flex-1 max-w-sm">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
-              placeholder="Search member or pigeon ID..."
+              placeholder="Zoek op lid of ringnummer..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="pl-10"
@@ -123,12 +123,12 @@ const Results = () => {
               <thead>
                 <tr className="bg-muted/50 backdrop-blur-md">
                   {[
-                    { key: "rank" as SortKey, label: "Rank", align: "text-left" },
-                    { key: "member" as SortKey, label: "Member", align: "text-left" },
-                    { key: null, label: "Pigeon ID", align: "text-left" },
-                    { key: null, label: "Arrival", align: "text-left" },
-                    { key: "distance" as SortKey, label: "Distance", align: "text-right" },
-                    { key: "velocity" as SortKey, label: "Velocity", align: "text-right" },
+                    { key: "rank" as SortKey, label: "Rang", align: "text-left" },
+                    { key: "member" as SortKey, label: "Lid", align: "text-left" },
+                    { key: null, label: "Ringnummer", align: "text-left" },
+                    { key: null, label: "Aankomst", align: "text-left" },
+                    { key: "distance" as SortKey, label: "Afstand", align: "text-right" },
+                    { key: "velocity" as SortKey, label: "Snelheid", align: "text-right" },
                   ].map((col, i) => (
                     <th
                       key={i}
@@ -180,7 +180,7 @@ const Results = () => {
             </table>
           </div>
           {filtered.length === 0 && (
-            <div className="py-16 text-center text-muted-foreground">No results found.</div>
+            <div className="py-16 text-center text-muted-foreground">Geen resultaten gevonden.</div>
           )}
         </div>
       </section>
