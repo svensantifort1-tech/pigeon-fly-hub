@@ -1,5 +1,6 @@
 import Logo from "./Logo";
 import { Link } from "react-router-dom";
+import fyxoLogo from "@/assets/fyxo-logo.png";
 
 const sponsors = [
   "Versele-Laga", "Beyers", "Natural", "Colombine", "Herbots", "Röhnfried",
