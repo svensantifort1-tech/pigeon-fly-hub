@@ -55,9 +55,9 @@ const Footer = () => (
       </div>
       <div className="border-t mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-xs text-muted-foreground">© 2026 PRPA. Alle rechten voorbehouden.</p>
-        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        <div className="flex items-center gap-0.5 text-xs text-muted-foreground">
           <span>Made by</span>
-          <img src={fyxoLogo} alt="FYXO" className="h-16 inline-block" />
+          <img src={fyxoLogo} alt="FYXO" className="h-[70px] inline-block" />
         </div>
       </div>
     </div>
