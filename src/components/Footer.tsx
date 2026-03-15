@@ -52,8 +52,12 @@ const Footer = () => (
           <p className="text-sm text-muted-foreground mt-1">+32 123 456 789</p>
         </div>
       </div>
-      <div className="border-t mt-8 pt-6">
+      <div className="border-t mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-xs text-muted-foreground">© 2026 PRPA. Alle rechten voorbehouden.</p>
+        <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span>Made by</span>
+          <img src={fyxoLogo} alt="FYXO" className="h-4 inline-block" />
+        </div>
       </div>
     </div>
   </footer>
